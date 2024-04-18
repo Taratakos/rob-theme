@@ -1,0 +1,30 @@
+{% comment %} To enable section on not-found.liquid page --> change/add not-found.json in templates folder.
+  And then we have to give it some json (We have to have sections --> main and then here we give it at least one section to render --> put the name of the section you want to render "type": "not-found")
+  {
+    "sections": {
+      "main": {
+        "type": "not-found",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }
+{% endcomment %}
+<div>
+  <h1>404 Not found</h1>
+  <h2>My Page not found</h2>
+</div>
+
+{% schema %}
+  {
+    "name": "Not found",
+    "presets": [
+      {
+        "name": "Not-found"
+      }
+    ]
+  }
+{% endschema %}
