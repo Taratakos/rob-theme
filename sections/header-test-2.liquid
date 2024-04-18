@@ -1,0 +1,53 @@
+<div class="h-test-2">
+  <h1>Title of header-test-2</h1>
+  <p>Can not remove it or reoder it, but it can have setttings</p>
+
+  <h2>Text</h2>
+  {{ section.settings.footer_linklist_title }}
+
+  <h2>Textarea</h2>
+  {{ section.settings.home_welcome_message }}
+</div>
+
+{% comment %} If you wnat to use setting you should use inline style {% endcomment %}
+<style>
+  .h-test-2 {
+    background: {{ section.settings.bg }};
+  }
+</style>
+
+{% comment %} Shopify going to grab the style sheet from each one of the section and append it to {{ content_for_header }} stuff {% endcomment %}
+{% stylesheet %}
+  .h-test-2 {
+    padding: 40px;
+  }
+{% endstylesheet %}
+
+{% comment %} Add some JS {% endcomment %}
+{% javascript %}
+  console.log('Hey from header-test-2 section !!!')
+{% endjavascript %}
+
+
+{% schema %}
+  {
+    "name": "Section-Head-Test2",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg",
+        "label": "Background color"
+      }, {
+        "type": "text",
+        "id": "footer_linklist_title",
+        "label": "Heading",
+        "default": "My Quick links"
+      }, {
+        "type": "textarea",
+        "id": "home_welcome_message",
+        "label": "Welcome message",
+        "default": "Welcome Welcome!"
+      }
+    ]
+  }
+{% endschema %}
