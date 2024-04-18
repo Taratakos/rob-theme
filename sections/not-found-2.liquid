@@ -1,0 +1,32 @@
+<div>
+  <h1>
+    Not found 2 for 404 page</h1>
+  <h2>My Page not found 2</h2>
+  <br>
+
+  <h2>Number</h2>
+  {% if section.settings.products_per_page > 0 %}
+    Your number is: {{ section.settings.products_per_page }}
+  {% else %}
+    Please enter number above ZERO
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Not found 2",
+    "settings": [
+      {
+        "type": "number",
+        "id": "products_per_page",
+        "label": "Products per page",
+        "default": 10
+      }
+    ],
+    "presets": [
+      {
+        "name": "Not-Found-2"
+      }
+    ]
+  }
+{% endschema %}
