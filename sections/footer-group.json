@@ -2,6 +2,21 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "header_test_NntdBr": {
+      "type": "header-test",
+      "settings": {
+        "show_search": true,
+        "hed-test-checkbox": false,
+        "bg": "",
+        "products_per_page": 20,
+        "logo_aligment": "left-left",
+        "font_size": 16,
+        "vertical_alignment": "middle",
+        "sizes": "m",
+        "footer_linklist_title": "My Quick links",
+        "home_welcome_message": "Welcome to my shop!"
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {
@@ -21,6 +36,7 @@
     }
   },
   "order": [
+    "header_test_NntdBr",
     "footer"
   ]
 }
