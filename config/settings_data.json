@@ -144,6 +144,14 @@
           "footer_linklist_title": "My Quick links",
           "home_welcome_message": "Welcome to my shop!"
         }
+      },
+      "header-test-2": {
+        "type": "header-test-2",
+        "settings": {
+          "bg": "#1cf415",
+          "footer_linklist_title": "My Quick links",
+          "home_welcome_message": "Welcome Welcome!"
+        }
       }
     },
     "content_for_index": [
