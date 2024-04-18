@@ -1,29 +1,55 @@
 {% comment %} To enable section on not-found.liquid page --> change/add not-found.json in templates folder.
-  And then we have to give it some json (We have to have sections --> main and then here we give it at least one section to render --> put the name of the section you want to render "type": "not-found")
-  {
-    "sections": {
-      "main": {
-        "type": "not-found",
-        "settings": {
-        }
-      }
-    },
-    "order": [
-      "main"
-    ]
-  }
+            And then we have to give it some json (We have to have sections --> main and then here we give it at least one section to render --> put the name of the section you want to render "type": "not-found")
+            {
+              "sections": {
+                "main": {
+                  "type": "not-found",
+                  "settings": {
+                  }
+                }
+              },
+              "order": [
+                "main"
+              ]
+            }
 {% endcomment %}
 <div>
   <h1>404 Not found</h1>
   <h2>My Page not found</h2>
+  <br>
+  <h2>Checkbox</h2>
+  {% if section.settings.hed-test-checkbox == true %}
+    Checkbox is checked
+  {% else %}
+    Checkbox is not checked
+  {% endif %}
+
+  <h2>Number</h2>
+  {% if section.settings.products_per_page > 0 %}
+    Your number is: {{ section.settings.products_per_page }}
+  {% else %}
+    Please enter number above ZERO
+  {% endif %}
 </div>
 
 {% schema %}
   {
     "name": "Not found",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hed-test-checkbox",
+        "label": "Checkbox"
+      }, {
+        "type": "number",
+        "id": "products_per_page",
+        "label": "Products per page",
+        "default": 20
+      }
+    ],
     "presets": [
       {
-        "name": "Not-found"
+        "name": "Not Found"
       }
     ]
   }

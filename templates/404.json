@@ -4,9 +4,15 @@
       "type": "main-404",
       "settings": {
       }
+    },
+    "not_found_test": {
+      "type": "not-found",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "not_found_test"
   ]
 }
