@@ -1,17 +1,17 @@
 {% comment %} To enable section on not-found.liquid page --> change/add not-found.json in templates folder.
-            And then we have to give it some json (We have to have sections --> main and then here we give it at least one section to render --> put the name of the section you want to render "type": "not-found")
-            {
-              "sections": {
-                "main": {
-                  "type": "not-found",
-                  "settings": {
-                  }
+          And then we have to give it some json (We have to have sections --> main and then here we give it at least one section to render --> put the name of the section you want to render "type": "not-found")
+          {
+            "sections": {
+              "main": {
+                "type": "not-found",
+                "settings": {
                 }
-              },
-              "order": [
-                "main"
-              ]
-            }
+              }
+            },
+            "order": [
+              "main"
+            ]
+          }
 {% endcomment %}
 <div>
   <h1>404 Not found</h1>
@@ -24,17 +24,12 @@
     Checkbox is not checked
   {% endif %}
 
-  <h2>Number</h2>
-  {% if section.settings.products_per_page > 0 %}
-    Your number is: {{ section.settings.products_per_page }}
-  {% else %}
-    Please enter number above ZERO
-  {% endif %}
+  
 </div>
 
 {% schema %}
   {
-    "name": "Not found",
+    "name": "Notfound",
     "settings": [
       {
         "type": "checkbox",
@@ -49,7 +44,7 @@
     ],
     "presets": [
       {
-        "name": "Not Found"
+        "name": "Notfound"
       }
     ]
   }

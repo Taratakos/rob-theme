@@ -343,7 +343,9 @@ body {
 
   {% sections 'header-group' %}
     {% comment %} code below render my headert-test section (created in sections folder) in customize theme editor  {% endcomment %}
-    {% section 'header-test' %}
+    {% comment %} {% section 'header-test' %} {% endcomment %}
+    {% section 'header-test-2' %}
+
 
     <main
       id="MainContent"
@@ -352,7 +354,6 @@ body {
       tabindex="-1">
       {{ content_for_layout }}
     </main>
-    {% section 'header-test-2' %}
 
     {% sections 'footer-group' %}
 
