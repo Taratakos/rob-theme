@@ -6,6 +6,7 @@
     {%- endfor %}
   </ul>
 
+  {% comment %} Thsis is how you get a global settings {% endcomment %}
   {% if section.settings.show_search %}
     <form action="/search">
       <input type="search" name="q">
@@ -13,39 +14,177 @@
     </form>
   {% endif %}
 
+  <h2>Checkbox</h2>
+  {% if section.settings.hed-test-checkbox == true %}
+    Checkbox is checked
+  {% else %}
+    Checkbox is not checked
+  {% endif %}
+
+  <h2>Number</h2>
+  {% if section.settings.products_per_page > 0 %}
+    Your number is: {{ section.settings.products_per_page }}
+  {% else %}
+    Please enter number above ZERO
+  {% endif %}
+
+  <h2>Radio</h2>
+  {% if section.settings.logo_aligment == 'left-left' %}
+    LEFT VALUE Selected
+  {% elsif section.settings.logo_aligment == 'right-right' %}
+    RIGHT VALUE Selected
+  {% else %}
+    CENETERED VALUE Selected
+  {% endif %}
+
+
+  <h2>Range</h2>
+  {{ section.settings.font_size }}
+
+  <h2>Select</h2>
+  {{ section.settings.vertical_alignment }}
+  <br>
+  {{ section.settings.sizes }}
+
+
+  <h2>Text</h2>
+  {{ section.settings.footer_linklist_title }}
+
+  <h2>Textarea</h2>
+  {{ section.settings.home_welcome_message }}
 
 </header>
 
+{% comment %} If you wnat to use setting you should use inline style {% endcomment %}
 <style>
   .header-test {
     background: {{ section.settings.bg }};
   }
 </style>
 
+{% comment %} Shopify going to grab the style sheet from each one of the section and append it to {{ content_for_header }} stuff {% endcomment %}
 {% stylesheet %}
   .header-test {
     padding: 20px;
+    /* background: {{ section.settings.bg }}; - do not wor there! */
   }
 {% endstylesheet %}
 
+{% comment %} Add some JS {% endcomment %}
 {% javascript %}
   console.log('Hey from header-test!')
 {% endjavascript %}
 
 {% schema %}
   {
-    "name": "Header-Test",
+    "name": "Section-Head-Test",
     "settings": [
       {
         "type": "checkbox",
         "id": "show_search",
         "label": "Show search form?",
         "default": true
-      }, {
+      },
+      {
+        "type": "checkbox",
+        "id": "hed-test-checkbox",
+        "label": "Checkbox"
+      },
+      {
         "type": "color",
         "id": "bg",
         "label": "Background color"
+      },
+      {
+        "type": "number",
+        "id": "products_per_page",
+        "label": "Products per page",
+        "default": 20
+      }, {
+        "type": "radio",
+        "id": "logo_aligment",
+        "label": "Logo Alignment",
+        "options": [
+          {
+            "value": "left-left",
+            "label": "Left"
+          }, {
+            "value": "centered",
+            "label": "Centered"
+          }, {
+            "value": "right-right",
+            "label": "Right"
+          }
+        ],
+        "default": "left-left"
+      }, {
+        "type": "range",
+        "id": "font_size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size",
+        "default": 16
+      }, {
+        "type": "select",
+        "id": "vertical_alignment",
+        "label": "Vertical alignment",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          }, {
+            "value": "middle",
+            "label": "Middle"
+          }, {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "middle"
+      }, {
+        "type": "select",
+        "id": "sizes",
+        "label": "Sizes",
+        "options": [
+          {
+            "value": "xs",
+            "label": "X-small"
+          },
+          {
+            "value": "s",
+            "label": "Small"
+          },
+          {
+            "value": "m",
+            "label": "Medium"
+          },
+          {
+            "value": "l",
+            "label": "Large"
+          }, {
+            "value": "xl",
+            "label": "X-large"
+          }, {
+            "value": "xxl",
+            "label": "XX-large"
+          }
+        ],
+        "default": "m"
+      }, {
+        "type": "text",
+        "id": "footer_linklist_title",
+        "label": "Heading",
+        "default": "My Quick links"
+      }, {
+        "type": "textarea",
+        "id": "home_welcome_message",
+        "label": "Welcome message",
+        "default": "Welcome to my shop!"
       }
+
+
     ]
   }
 {% endschema %}

@@ -333,7 +333,6 @@ body {
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
-    {% section 'header-test' %}
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -342,7 +341,9 @@ body {
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% sections 'header-group' %}
+  {% sections 'header-group' %}
+    {% comment %} code below render my headert-test section (created in sections folder) in customize theme editor  {% endcomment %}
+    {% section 'header-test' %}
 
     <main
       id="MainContent"
