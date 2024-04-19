@@ -7,19 +7,6 @@
         "padding_bottom": 28
       }
     },
-    "not_found_G84dEt": {
-      "type": "not-found",
-      "settings": {
-        "hed-test-checkbox": false,
-        "products_per_page": 20
-      }
-    },
-    "not_found_2_eQkwNA": {
-      "type": "not-found-2",
-      "settings": {
-        "products_per_page": 10
-      }
-    },
     "header_test_mAKmWw": {
       "type": "header-test",
       "settings": {
@@ -38,8 +25,6 @@
   },
   "order": [
     "main",
-    "not_found_G84dEt",
-    "not_found_2_eQkwNA",
     "header_test_mAKmWw"
   ]
 }
